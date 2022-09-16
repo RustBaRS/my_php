@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB; // подключаем фасад DB
 
 class AuthorController extends Controller
 {
@@ -14,7 +15,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        //
+        $authors = DB::table('authors')->get();
+		return view('welcome', ['authors' => $authors]);
     }
 
     /**

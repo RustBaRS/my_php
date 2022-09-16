@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('books')->insert([
             [
-                'title' => 'Lev Tolstoy',
+                'title' => 'War and Peace',
             ],
             [
-                'title' => 'Maksim Gorkiy',
+                'title' => 'The Cherry Orchard',
             ],
         ]);
     }

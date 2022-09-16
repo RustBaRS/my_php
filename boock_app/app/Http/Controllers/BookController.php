@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB; // подключаем фасад DB
 
 class BookController extends Controller
 {
@@ -14,7 +15,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = DB::table('books')->get();
+		return view('welcome', ['books' => $books]);
     }
 
     /**
@@ -46,7 +48,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        //
+        
     }
 
     /**
