@@ -15,8 +15,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = DB::table('books')->get();
-		return view('welcome', ['books' => $books]);
+        $books = Book::get();
+        return view('index', compact('books'));
+        // $books = DB::table('books')->get();
+		// return view('welcome', ['books' => $books]);
     }
 
     /**
@@ -26,7 +28,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return(view('form'));
     }
 
     /**
@@ -48,7 +50,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        
+        return view('show');
     }
 
     /**
@@ -59,7 +61,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('form', compact('book'));
     }
 
     /**

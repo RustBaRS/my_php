@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +21,6 @@ use App\Http\Controllers\AuthorController;
 Route::get('/', function() {
     return view('welcome');
 });
+// Route::redirect('/', 'authors');
 Route::resource('books', BookController::class);
 Route::resource('authors', AuthorController::class);

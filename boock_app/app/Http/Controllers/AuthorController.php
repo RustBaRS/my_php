@@ -15,8 +15,10 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = DB::table('authors')->get();
-		return view('welcome', ['authors' => $authors]);
+        $authors = Author::get();
+        return view('index', compact('authors'));
+        // $authors = DB::table('authors')->get();
+		// return view('welcome', ['authors' => $authors]);
     }
 
     /**
@@ -26,7 +28,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return(view('form'));
     }
 
     /**
@@ -48,7 +50,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        //
+        return view('show');
     }
 
     /**
@@ -59,7 +61,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        //
+        return view('form', compact('author'));
     }
 
     /**
