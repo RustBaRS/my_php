@@ -24,7 +24,7 @@
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td colspan="3">Larry the Bird</td>
+      <td colspan="2">Larry the Bird</td>
     </tr>
   </tbody>
 </table>
