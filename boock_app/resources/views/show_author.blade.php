@@ -1,1 +1,3 @@
-@extends('layout.author')
+@extends('layout')
+
+@section('title', 'Author')

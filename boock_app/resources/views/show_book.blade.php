@@ -1,1 +1,3 @@
-@extends('layout.book')
+@extends('layout')
+
+@section('title', 'Book')

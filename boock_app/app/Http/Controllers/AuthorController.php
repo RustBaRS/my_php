@@ -16,7 +16,7 @@ class AuthorController extends Controller
     public function index()
     {
         $authors = Author::get();
-        return view('index', compact('authors'));
+        return view('index_author', compact('authors'));
         // $authors = DB::table('authors')->get();
 		// return view('welcome', ['authors' => $authors]);
     }
@@ -26,8 +26,9 @@ class AuthorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $authors = Author::create($request);
         return(view('form'));
     }
 
