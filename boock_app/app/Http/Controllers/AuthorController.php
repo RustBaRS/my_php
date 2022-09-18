@@ -28,8 +28,8 @@ class AuthorController extends Controller
      */
     public function create(Request $request)
     {
-        $authors = Author::create($request);
-        return(view('form'));
+        //$authors = Author::create($request);
+        return(view('form_author'));
     }
 
     /**
@@ -40,7 +40,8 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Author::create($request->only(['First_Name', 'Last_Name', 'Quantity_of_books']));
+        return redirect()->route('authors.index');
     }
 
     /**
@@ -51,7 +52,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        return view('show');
+        return view('show_author', compact('author'));
     }
 
     /**
@@ -62,7 +63,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        return view('form', compact('author'));
+        return view('form_author', compact('author'));
     }
 
     /**
@@ -74,7 +75,8 @@ class AuthorController extends Controller
      */
     public function update(Request $request, Author $author)
     {
-        //
+        $author->update($request->only(['First_Name', 'Last_Name', 'Quantity_of_books']));
+        return redirect()->route('authors.index');
     }
 
     /**
@@ -85,6 +87,7 @@ class AuthorController extends Controller
      */
     public function destroy(Author $author)
     {
-        //
+        $author->delete();
+        return redirect()->route('authors.index');
     }
 }
