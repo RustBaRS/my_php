@@ -18,10 +18,10 @@ class DatabaseSeeder extends Seeder
         DB::table('books')->insert([
             [
                 'title' => 'War and Peace',
-            ],
-            [
-                'title' => 'The Cherry Orchard',
-            ],
+            ]
+            // [
+            //     'title' => 'The Cherry Orchard',
+            // ],
         ]);
     }
 }

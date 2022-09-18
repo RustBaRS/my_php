@@ -17,16 +17,22 @@
         @endisset
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Book title</label>
-            <input name = 'title'
-            value='{{ isset($book) ? $book->title : null}}' 
-            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type book title here">
+            <input name = 'Book title'
+            value='{{ isset($book) ? $book->Book_title : null}}' 
+            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type book Book title here">
         </div>
         <div class="mb-3">
-            <label for="formGroupExampleInput2" class="form-label">Author name</label>
-            <input name = 'name'
-            value='{{ isset($book) ? $book->name : null}}' 
-            type="text" class="form-control" id="formGroupExampleInput2" placeholder="Type author name here">
+            <label for="formGroupExampleInput" class="form-label">First Name of Author</label>
+            <input name = 'First Name of Author'
+            value='{{ isset($book) ? $book->First_Name_of_Author : null}}' 
+            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type book First Name of Author here">
         </div>
-        <button type="submit" class="btn btn-primary">{{isset($book) ? "Edit!" : "Add a book!"}}</button>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Last Name of Author</label>
+            <input name = 'Last Name of Author'
+            value='{{ isset($book) ? $book->Last_Name_of_Author : null}}' 
+            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type book Last Name of Author here">
+        </div>
+        <button type="submit" class="btn btn-primary">{{isset($book) ? "Edit!" : "Add the Book!"}}</button>
     </form>
 @endsection

@@ -16,10 +16,16 @@
             @method('PUT')
         @endisset
         <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Author name</label>
-            <input name = 'name'
-            value='{{ isset($author) ? $author->name : null}}' 
-            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type author name here">
+            <label for="formGroupExampleInput" class="form-label">First Name</label>
+            <input name = 'First Name'
+            value='{{ isset($author) ? $author->First_Name : null}}' 
+            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type author First Name here">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Last Name</label>
+            <input name = 'Last Name'
+            value='{{ isset($author) ? $author->Last_Name : null}}' 
+            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type author Last Name here">
         </div>
         <button type="submit" class="btn btn-primary">{{isset($author) ? "Edit!" : "Add an author!"}}</button>
     </form>
