@@ -12,9 +12,8 @@ class Author extends Model
     protected $table = 'authors';
 
     protected $fillable = [
-        'First_Name',
-        'Last_Name',
-        'Quantity_of_books'
+        'first_name',
+        'last_name'
     ];
 
     public function books()

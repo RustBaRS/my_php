@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Author;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; // подключаем фасад DB
 
@@ -39,7 +40,20 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create($request->only(['Book_title', 'First_Name_of_Author', 'Last_Name_of_Author']));
+        $data = $request->only(['book_title']);
+        $first_name = $request->only(['first_name']);
+        $last_name = $request->only(['last_name']);
+        $author = DB::table('authors')->select('*')->where('first_name', $first_name)->where('last_name', $last_name)->get()->first();
+        if ($author) {
+            $data['author_id'] = $author->id;
+        } else {
+            $data['author_id'] = DB::table('authors')->insertGetId([
+                'first_name' => $first_name['first_name'], 
+                'last_name' => $last_name['last_name']
+            ]);
+        }
+        // print_r($data);
+        $result = Book::create($data);
         return redirect()->route('books.index');
     }
 
@@ -74,7 +88,7 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        $book->update($request->only(['Book_title', 'First_Name_of_Author', 'Last_Name_of_Author']));
+        $book->update($request->only(['book_title', 'first_name', 'last_name']));
         return redirect()->route('books.index');
     }
 

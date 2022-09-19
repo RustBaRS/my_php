@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->string('First_Name');
-            $table->string('Last_Name');
+            $table->string('first_name');
+            $table->string('last_name');
             $table->timestamps();
         });
     }

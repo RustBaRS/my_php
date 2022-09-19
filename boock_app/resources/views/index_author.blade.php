@@ -18,13 +18,13 @@
         <tr>
             <th scope="row">{{ $author->id }}</th>
             <td>
-                <a style='text-decoration: none;' href="{{ route('authors.show', $author) }}">{{ $author->First_Name }}</a>
+                <a style='text-decoration: none;' href="{{ route('authors.show', $author) }}">{{ $author->first_name }}</a>
             </td>
             <td>
-                <a style='text-decoration: none;' href="{{ route('authors.show', $author) }}">{{ $author->Last_Name }}</a>
+                <a style='text-decoration: none;' href="{{ route('authors.show', $author) }}">{{ $author->last_name }}</a>
             </td>
             <td>
-                <a style='text-decoration: none;' href="{{ route('authors.show', $author) }}">{{ $author->Quantity_of_books }}</a>
+                <a style='text-decoration: none;' href="{{ route('authors.show', $author) }}">{{ $author->count }}</a>
             </td>
             <td>
                 <form method="POST" action="{{ route('authors.destroy', $author) }}">

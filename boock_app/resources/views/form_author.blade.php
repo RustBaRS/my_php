@@ -17,15 +17,15 @@
         @endisset
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">First Name</label>
-            <input name = 'First Name'
+            <input name = 'first_name'
             value='{{ isset($author) ? $author->First_Name : null}}' 
-            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type author First Name here">
+            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type Author First Name here">
         </div>
         <div class="mb-3">
             <label for="formGroupExampleInput" class="form-label">Last Name</label>
-            <input name = 'Last Name'
+            <input name = 'last_name'
             value='{{ isset($author) ? $author->Last_Name : null}}' 
-            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type author Last Name here">
+            type="text" class="form-control" id="formGroupExampleInput" placeholder="Type Author Last Name here">
         </div>
         <button type="submit" class="btn btn-primary">{{isset($author) ? "Edit!" : "Add an author!"}}</button>
     </form>

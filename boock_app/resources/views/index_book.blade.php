@@ -9,8 +9,7 @@
         <tr>
         <th scope="col">ID</th>
         <th scope="col">Book title</th>
-        <th scope="col">First Name of Author</th>
-        <th scope="col">Last Name of Author</th>
+        <th scope="col">Author ID</th>
         </tr>
     </thead>
     <tbody>
@@ -18,13 +17,10 @@
         <tr>
             <th scope="row">{{ $book->id }}</th>
             <td>
-                <a style='text-decoration: none;' href="{{ route('books.show', $book) }}">{{ $book->Book_title }}</a>
+                <a style='text-decoration: none;' href="{{ route('books.show', $book) }}">{{ $book->book_title }}</a>
             </td>
             <td>
-                <a style='text-decoration: none;' href="{{ route('books.show', $book) }}">{{ $book->First_Name_of_Author }}</a>
-            </td>
-            <td>
-                <a style='text-decoration: none;' href="{{ route('books.show', $book) }}">{{ $book->Last_Name_of_Author }}</a>
+                <a style='text-decoration: none;' href="{{ route('books.show', $book) }}">{{ $book->author_id }}</a>
             </td>
             <td>
                 <form method="POST" action="{{ route('books.destroy', $book) }}">
